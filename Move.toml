@@ -1,0 +1,16 @@
+[package]
+name = "devhub"
+version = "0.0.1"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/devnet" }
+DeepBook = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/deepbook", rev = "framework/devnet" }
+
+[addresses]
+dex = "0x0"
+eth = "0x1"
+btc = "0x2"
+
+[dev-dependencies]
+
+[dev-addresses]
