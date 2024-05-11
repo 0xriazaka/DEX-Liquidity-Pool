@@ -8,8 +8,8 @@ module eth::eth {
     struct ETH has drop {}
 
     #[allow(unused_function)]
-    fun init(witness: ETH, ctx: &mut TxContext) {
-        let (treasury, metadata) = coin::create_currency(witness, 6, b"ETH", b"", b"", option::none(), ctx);
+    fun init(otw: ETH, ctx: &mut TxContext) {
+        let (treasury, metadata) = coin::create_currency(otw, 6, b"ETH", b"", b"", option::none(), ctx);
         transfer::public_freeze_object(metadata);
         transfer::public_transfer(treasury, tx_context::sender(ctx))
     }
