@@ -8,8 +8,8 @@ module btc::btc {
     struct BTC has drop {}
 
     #[allow(unused_function)]
-    fun init(witness: BTC, ctx: &mut TxContext) {
-        let (treasury, metadata) = coin::create_currency(witness, 6, b"BTC", b"", b"", option::none(), ctx);
+    fun init(otw: BTC, ctx: &mut TxContext) {
+        let (treasury, metadata) = coin::create_currency(otw, 6, b"BTC", b"", b"", option::none(), ctx);
         transfer::public_freeze_object(metadata);
         transfer::public_transfer(treasury, tx_context::sender(ctx))
     }
